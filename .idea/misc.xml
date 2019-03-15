@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GroovyCompilerProjectConfiguration">
+    <option name="configScript" value="D:/Candidates/groovy-2.5.6/bin/groovy.bat" />
+  </component>
+  <component name="Kotlin2JsCompilerArguments">
+    <option name="sourceMapEmbedSources" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectResources">
+    <xml-schema-version>XMLSchema_1_1</xml-schema-version>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="TerminalProjectOptionsProvider">
+    <option name="myStartingDirectory" value="C:\Program Files\Git\git-bash.exe" />
+  </component>
+</project>
