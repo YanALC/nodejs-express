@@ -12,6 +12,7 @@ var express = require('express'),
 		expressValidator = require('express-validator');
 
 //mongodb
+//prod: mongodb://nodejs-express:123456@ds137759.mlab.com:37759/nodejs-express
 mongoose.connect('mongodb://localhost/nodejs-express', function(err) {
 	if (err) {
 		console.log("Erro ao conectar no mongodb: " + err);
@@ -53,6 +54,8 @@ load('models').then('controllers').then('routes').into(app);
 app.use(erros.notfound);
 app.use(erros.serverError);
 
-app.listen(3000, function() {
+var port = process.env.PORT || 5000;
+
+app.listen(port, function() {
 	console.log('Express server listening on port 3000');
 });
