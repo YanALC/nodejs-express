@@ -12,7 +12,7 @@ var express = require('express'),
 		expressValidator = require('express-validator');
 
 //mongodb
-mongoose.connect('mongodb://localhost/acadtec', function(err) {
+mongoose.connect('mongodb://localhost/nodejs-express', function(err) {
 	if (err) {
 		console.log("Erro ao conectar no mongodb: " + err);
 	} else {
@@ -42,7 +42,7 @@ app.use(flash());
 //helpers
 app.use(function(req, res, next) {
 	res.locals.session = req.session.usuario;
-	res.locals.isLogged = req.session.usuario ? true : false;
+	res.locals.isLogged = !!req.session.usuario;
 	res.locals.moment = moment;
 	next();
 });
@@ -50,8 +50,8 @@ app.use(function(req, res, next) {
 load('models').then('controllers').then('routes').into(app);
 
 //middleware
-// app.use(erros.notfound);
-// app.use(erros.serverError);
+app.use(erros.notfound);
+app.use(erros.serverError);
 
 app.listen(3000, function() {
 	console.log('Express server listening on port 3000');

@@ -1,6 +1,6 @@
-module.exports = function(req, res) {
+module.exports = function(req) {
 	req.assert('nome', 'Informe o nome.').notEmpty();
-	if (req.body.email != '') {
+	if (req.body.email !== '') {
 		req.assert('email', 'E-mail inválido.').isEmail();
 	}
 	var validacoesErros = req.validationErrors() || [];

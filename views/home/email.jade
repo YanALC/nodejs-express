@@ -1,28 +1,28 @@
 extends ../layout
 block content
-    h1 Envio de E-mail
-    hr
-    if messages.erro
-        div(class="alert alert-danger")
-            each msg in messages.erro
-                b= msg
-                br
-        br
-    if messages.info
-        div(class="alert alert-success")
-            p= messages.info
-        br
-    form(method="POST", action="/email", role="form")
-        div(class="form-group")
-            label Nome
-            input(type="text", name="nome", class="form-control", placeholder = "Nome", required)
-        div(class="form-group")
-            label E-mail
-            input(type="email", name="email", class="form-control", placeholder="E-mail",required)
-        div(class="form-group")
-            label Assunto
-            input(type="text", name="assunto", class="form-control", placeholder="Assunto", required)
-        div(class="form-group")
-            label Mensagem
-            textarea(row="10", cols="10", class="form-control", name="mensagem", required)
-        button(class="btn btn-success", type="submit") Enviar
+	h1(class="display-4") Envio de E-mail
+	hr
+	if messages.erro
+		div(class="alert alert-danger")
+			each msg in messages.erro
+				b= msg
+				br
+		br
+	if messages.info
+		div(class="alert alert-success")
+			p= messages.info
+		br
+	form(method="POST", action="/email", role="form")
+		div(class="form-group")
+			label Nome
+			input(type="text", name="nome", class="form-control", placeholder = "Nome", required)
+		div(class="form-group")
+			label E-mail
+			input(type="email", name="email", class="form-control", placeholder="E-mail", required)
+		div(class="form-group")
+			label Assunto
+			input(type="text", name="assunto", class="form-control", placeholder="Assunto", required)
+		div(class="form-group")
+			label Mensagem
+			textarea(rows="10", cols="10", class="form-control", name="mensagem", required)
+		button(class="btn btn-success", type="submit") Enviar

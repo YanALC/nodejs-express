@@ -1,20 +1,27 @@
 extends ../layout
-
+script(type="text/javascript").
+	$(function() {
+		if (session.authenticated) {
+			window.location("/home");
+		}
+	})
 block content
-    form(method="POST", action="/", class="form-login")
-        h3 Entrar no sistema
-        p Preencha os campos necessários para acessar.
-        br
-        if messages.erro
-            div(class="alert alert-danger")
-                each msg in messages.erro
-                    b= msg
-                    br
-            br
-        div(class="form-group")
-            label E-mail
-            input(type="email", class="form-control", placeholder="E-mail", name="email", autofocus, required)
-        div(class="form-group")
-            label Senha
-            input(type="password", class="form-control", placeholder="Senha", name="password", required)
-        button(type="submit", class="btn btn-primary btn-block") Entrar
+	form(method="POST", action="/", class="form-login")
+		h1(class="display-4") Entrar no sistema
+		p Preencha os campos necessários para acessar.
+		br
+		if messages.erro
+			div(class="alert alert-danger")
+				each msg in messages.erro
+					b= msg
+					br
+			br
+		div(class="form-group")
+			label Email
+			input(type="email", class="form-control", placeholder="E-mail", name="email", autofocus, required)
+		div(class="form-group")
+			label Senha
+			input(type="password", class="form-control", placeholder="Senha", name="password", required)
+		button(type="submit", class="btn btn-primary btn-block") Entrar
+		br
+	a(href="/usuarios/create", class="btn btn-secondary btn-block") Cadastrar

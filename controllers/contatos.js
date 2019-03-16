@@ -1,7 +1,7 @@
 var validacao = require('../validations/contatos.js');
 module.exports = function(app) {
 	var Amigo = app.models.amigos;
-	var ContatoController = {
+	return {
 		index : function(req, res) {
 			var _id = req.params.id;
 			Amigo.findById(_id, function(err, dados) {
@@ -50,5 +50,4 @@ module.exports = function(app) {
 			});
 		}
 	};
-	return ContatoController;
 };

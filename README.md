@@ -11,8 +11,11 @@ Criado com base no módulo <a href="https://www.npmjs.org/package/express-genera
 
 1. Clone o repositório: `git clone https://github.com/YanALC/nodejs-express.git`
 2. Instalar pacotes: `npm install`
-3. Rodar: `node app`
-4. Acesse o browser: `http://localhost:3000`
+3. Instalar o MongoDB https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.6.zip
+
+4. Criar um banco de nome `nodejs-express` no MongoDB
+5. Rodar aplicação: `node app`
+6. Acesse o browser: `http://localhost:3000`
 
 
 Desenvolvedor: Yan Lobianchi

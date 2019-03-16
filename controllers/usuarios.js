@@ -2,7 +2,7 @@ module.exports = function(app) {
 	var validacao = require('../validations/usuarios');
 	var Usuario = app.models.usuarios;
 	
-	var UsuarioController = {
+	return {
 		index : function(req, res) {
 			Usuario.find(function(err, dados) {
 				if (err) {
@@ -92,6 +92,5 @@ module.exports = function(app) {
 				res.render('usuarios/edit', {user: req.body});
 			}
 		}
-	};
-	return UsuarioController
+	}
 };

@@ -1,8 +1,7 @@
 var url = require('url');
 
-module.exports = function(req, res) {
-	var createUrl = url.parse(req.url).pathname == "/usuarios/create";
-	var updateUrl = !createUrl;
+module.exports = function(req) {
+	var createUrl = url.parse(req.url).pathname === "/usuarios/create";
 	req.assert('nome', 'Informe o seu nome.').notEmpty();
 	if (createUrl) {
 		req.assert('email', 'E-mail inválido.').isEmail();
@@ -11,7 +10,7 @@ module.exports = function(req, res) {
 	var validateErros = req.validationErrors() || [];
 	
 	//verificar se a senha confere
-	if (req.body.password != req.body.password_confirmar) {
+	if (req.body.password !== req.body.password_confirmar) {
 		validateErros.push({msg: 'Senha não confere.'});
 	}
 	if (validateErros.length > 0) {

@@ -3,7 +3,7 @@ module.exports = function(app) {
 	var Usuario = app.models.usuarios;
 	var validacao = require('../validations/authentication');
 	
-	var HomeController = {
+	return {
 		index        : function(req, res) {
 			res.render('home/index');
 		},
@@ -56,7 +56,7 @@ module.exports = function(app) {
 				subject: req.body.assunto,
 				text   : req.body.mensagem
 			};
-			transport.sendMail(mailOptions, function(err, response) {
+			transport.sendMail(mailOptions, function(err) {
 				if (err) {
 					req.flash('erro', 'Erro ao enviar e-mail: ' + err);
 					res.redirect('/email');
@@ -67,5 +67,4 @@ module.exports = function(app) {
 			});
 		}
 	};
-	return HomeController;
 };

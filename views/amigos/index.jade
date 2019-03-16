@@ -1,8 +1,8 @@
 extends ../layout
 
 block content
-    h1 Amigos
-    a(href="/amigos/create", class="btn btn-success") Cadastrar
+    h1(class="display-4") Amigos
+    a(href="/amigos/create" class="btn btn-success") Cadastrar
     br
     br
     if messages.erro
@@ -34,9 +34,9 @@ block content
                                 span(class="glyphicon glyphicon-search")
                             span &nbsp;
                             a(href="/amigos/edit/#{valor._id}", class="btn btn-primary")
-                                span(class="glyphicon-pencil")
+                                span(class="glyphicon glyphicon-pencil")
                             span &nbsp;
                             a(href="/contatos/#{valor._id}", class="btn btn-success")
-                                span(class="glyphicon-plus")
+                                span(class="glyphicon glyphicon-plus")
     else
         p Nenhum registro encontrado

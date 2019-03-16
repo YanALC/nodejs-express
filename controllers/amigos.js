@@ -1,7 +1,7 @@
 var validacao = require('../validations/amigos.js');
 module.exports = function(app) {
 	var Amigos = app.models.amigos;
-	var AmigoController = {
+	return {
 		index : function(req, res) {
 			Amigos.find(function(err, dados) {
 				if (err) {
@@ -77,7 +77,7 @@ module.exports = function(app) {
 					var model = dados;
 					model.nome = req.body.nome;
 					model.email = req.body.email;
-					model.save(function(err) {
+					model.save(function() {
 						if (dados) {
 							req.flash('erro', 'Erro ao atualizar.');
 							res.render('amigos/edit', {model: model});
@@ -92,5 +92,4 @@ module.exports = function(app) {
 			}
 		}
 	};
-	return AmigoController;
 };
